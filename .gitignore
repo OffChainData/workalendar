@@ -8,3 +8,6 @@ build/
 .cache/
 .pytest-cache/
 .pytest_cache/
+
+venv/
+env/

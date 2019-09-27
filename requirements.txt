@@ -1,0 +1,11 @@
+jplephem==2.9
+lunardate==0.2.0
+numpy==1.17.2
+pyCalverter==1.6.1
+pyluach==1.0.1
+python-dateutil==2.8.0
+pytz==2019.2
+sgp4==1.4
+six==1.12.0
+skyfield==1.12
+skyfield-data==0.0.2

@@ -1,0 +1,7 @@
+version: '3'
+services:
+  holiday-sources:
+    container_name: workalendar
+    ports:
+      - "8187:8000"
+    build: .
