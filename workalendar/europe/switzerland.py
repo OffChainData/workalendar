@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from datetime import date, timedelta
-from workalendar.core import WesternCalendar, ChristianMixin
+from ..core import WesternCalendar, ChristianMixin, SUN
 from ..registry_tools import iso_register
 
 
@@ -51,4 +51,30 @@ class Vaud(Switzerland):
         if self.include_federal_thanksgiving_monday:
             days.append((self.get_federal_thanksgiving_monday(year),
                          "Federal Thanksgiving Monday"))
+        return days
+
+
+@iso_register('CH-GE')
+class Geneva(Switzerland):
+    'Geneva'
+
+    include_boxing_day = False
+
+    FIXED_HOLIDAYS = WesternCalendar.FIXED_HOLIDAYS + (
+        (8, 1, "National Holiday"),
+        (12, 31, "Creation of Geneva Republic"),
+    )
+
+    def get_genevan_fast(self, year):
+        "Thursday following the first Sunday of September"
+        first_sunday = self.get_nth_weekday_in_month(year, 9, SUN)
+        # The following thursday is 4 days after
+        return (
+            first_sunday + timedelta(days=4),
+            "Genevan Fast"
+        )
+
+    def get_variable_days(self, year):
+        days = super(Geneva, self).get_variable_days(year)
+        days.append(self.get_genevan_fast(year))
         return days

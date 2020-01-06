@@ -1,8 +1,52 @@
 # CHANGELOG
 
-## master
+## master (unreleased)
+- Added Ukraine calendar, by @apelloni.
 
-Nothing here yet.
+### ISO Registry API Change
+
+- Changes in the ``registry.items()`` method API.
+  - This method is aliased to ``get_calendars()``. In a near release, the ``items()`` method will change its purpose.
+  - The ``get_calendars()`` method accepts an empty/missing ``region_codes`` argument to retrieve the full registry. Please see the [ISO Registry documentation](https://peopledoc.github.io/workalendar/iso-registry.html) for extensive usage docs (#403, #375).
+
+## v7.2.0 (2019-12-06)
+
+### New calendars
+
+- Added Serbia calendar, by @apelloni (#435).
+- Added Argentina calendar, by @ftatarli (#419).
+
+### Other changes
+
+- Update China's public holidays for 2020, thx @nut-free (#429).
+- Update Malaysia and Singapore for 2021 (Deepavali + Thaipusam) by @jack-pace (#432).
+- Small refactorings on the Gevena (Switzerland) holiday class, thx to @cw-intellineers (#420).
+
+## v7.1.1 (2019-11-22)
+
+- **Bugfix** for USA: Fixed incorrect implementation for Thanksgiving Friday, thx @deveshvar (#422).
+- Fix Advanced usage documentation about Thanksgiving Day (#426).
+- Added Geneva calendar by @cw-intellineers (#420).
+
+## v7.1.0 (2019-11-15)
+
+### New calendars
+
+- Added 27 Brazil calendars -- thanks a lot to @luismalta & @mileo, (#409 & #415)
+
+### Enhancements
+
+- Added compatibility with Python 3.8 (#406).
+- Added an IBGE_REGISTER to reference IBGE (brazilian) calendars with related tests (#415).
+- Improve ISO registry interface by raising an error when trying to register a non-Calendar class (#412).
+
+### Other changes
+
+- Fixes and additions to some Brazil calendars ; again, thanks to @luismalta & @mileo, (#409 & #415)
+- Fix Denmark, re-add Christmas Eve, which is widely treated as public holiday ; thx to @KidkArolis, (#414).
+- Increase Malaysia coverage by adding tests for missing Deepavali & Thaipusam.
+- Increase China coverage by adding tests for special extra-holidays & extra-working days cases.
+
 
 ## v7.0.0 (2019-09-20)
 

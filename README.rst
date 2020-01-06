@@ -51,7 +51,7 @@ For a more complete documentation and advanced usage, go to
 External dependencies
 =====================
 
-Workalendar has been tested on Python 2.7, 3.5, 3.6, 3.7.
+Workalendar has been tested on Python 2.7, 3.5, 3.6, 3.7, 3.8.
 
 If you're using wheels, you should be fine without having to install extra system packages. As of ``v7.0.0``, we have dropped ``ephem`` as a dependency for computing astronomical ephemeris in favor of ``skyfield``. So if you had any trouble because of this new dependency, during the installation or at runtime, `do not hesitate to file an issue <https://github.com/peopledoc/workalendar/issues/>`_.
 
@@ -60,7 +60,10 @@ Tests
 
 Travis status:
 
-.. image:: https://api.travis-ci.org/peopledoc/workalendar.png
+|travis|
+
+.. |travis| image:: https://travis-ci.org/peopledoc/workalendar.svg?branch=master
+    :target: https://travis-ci.org/peopledoc/workalendar
 
 
 To run test, just install tox with ``pip install tox`` and run::
@@ -105,6 +108,7 @@ Europe
 * Portugal
 * Romania
 * Russia
+* Serbia
 * Slovakia
 * Slovenia
 * Spain (incl. Catalonia)
@@ -112,13 +116,16 @@ Europe
 * Switzerland
 
   * Vaud
+  * Geneva
 
 * Turkey
+* Ukraine
 * United Kingdom (incl. Northern Ireland, Scotland and all its territories)
 
 America
 -------
 
+* Argentina
 * Barbados
 * Brazil (all states, cities and for bank transactions, except the city of Viana)
 * Canada (including provincial and territory holidays)

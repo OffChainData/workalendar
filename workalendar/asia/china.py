@@ -24,6 +24,13 @@ holidays = {
             'Dragon Boat Festival': [(6, 7)],
             'Mid-Autumn Festival': [(9, 13)]
         },
+    2020:
+        {
+            'Ching Ming Festival': [(4, 4), (4, 5), (4, 6)],
+            'Labour Day Holiday': [(5, 1), (5, 2), (5, 3), (5, 4), (5, 5)],
+            'Dragon Boat Festival': [(6, 25), (6, 26), (6, 27)],
+            'National Day': [(10, 8)]
+        },
 }
 
 workdays = {
@@ -41,6 +48,13 @@ workdays = {
             'Labour Day Holiday Shift': [(4, 28), (5, 5)],
             'National Day Shift': [(9, 29), (10, 12)],
         },
+    2020:
+        {
+            'Spring Festival Shift': [(1, 19), (2, 1)],
+            'Labour Day Holiday Shift': [(4, 26), (5, 9)],
+            'Dragon Boat Festival Shift': [(6, 28)],
+            'National Day Shift': [(9, 27), (10, 10)]
+        },
 }
 
 
@@ -54,11 +68,13 @@ class China(ChineseNewYearCalendar, WesternCalendar):
 
     include_chinese_new_year_eve = True
 
-    extra_working_days = []
-    for year, data in workdays.items():
-        for holiday_name, day_list in data.items():
-            for v in day_list:
-                extra_working_days.append(date(year, v[0], v[1]))
+    def __init__(self, *args, **kwargs):
+        super(China, self).__init__(*args, **kwargs)
+        self.extra_working_days = []
+        for year, data in workdays.items():
+            for holiday_name, day_list in data.items():
+                for v in day_list:
+                    self.extra_working_days.append(date(year, v[0], v[1]))
 
     def get_calendar_holidays(self, year):
         warnings.warn("Support 2018, 2019 currently, need update every year.")

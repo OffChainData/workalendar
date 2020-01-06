@@ -26,11 +26,13 @@ from .poland import Poland
 from .portugal import Portugal
 from .romania import Romania
 from .russia import Russia
+from .serbia import Serbia
 from .slovakia import Slovakia
 from .slovenia import Slovenia
 from .spain import Spain, Catalonia
 from .sweden import Sweden
-from .switzerland import Switzerland, Vaud
+from .switzerland import Switzerland, Vaud, Geneva
+from .ukraine import Ukraine
 from .united_kingdom import UnitedKingdom, UnitedKingdomNorthernIreland
 from .turkey import Turkey
 
@@ -81,12 +83,15 @@ __all__ = (
     'Portugal',
     'Romania',
     'Russia',
+    'Serbia',
     'Slovakia',
     'Slovenia',
     'Spain',
     'Sweden',
     'Switzerland',
     'Vaud',
+    'Geneva',
+    'Ukraine',
     'UnitedKingdom',
     'UnitedKingdomNorthernIreland',
     'Turkey',
