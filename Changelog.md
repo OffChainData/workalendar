@@ -4,6 +4,14 @@
 
 Nothing here yet.
 
+## v8.0.2 (2020-01-24)
+
+- Fix several miscalculations in Georgia (USA) calendar (#451).
+
+## v8.0.1 (2020-01-24)
+
+- Fix Family Day for British Columbia (Canada) which was switched from 2nd to 3rd Monday of February in 2019 - thx @jbroudou for the bug report (#454).
+
 ## v8.0.0 (2020-01-10)
 
 - **BREAKING CHANGE** Drop Support for Python 2 - EOL January 1st 2020 (#442).
